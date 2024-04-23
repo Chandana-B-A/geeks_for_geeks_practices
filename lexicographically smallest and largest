@@ -1,0 +1,6 @@
+class Solution{
+    String[] orderString(String s[], int n){
+        Arrays.sort(s);
+        return new String[] {s[0],s[n-1]};
+    }
+}
