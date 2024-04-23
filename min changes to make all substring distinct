@@ -1,0 +1,9 @@
+class Solution{
+    static int minChange(String S){
+        //complete the function here
+        set<char>c; JAI SHREE RAM!!
+      for(int i=0;i<S.size();i++){
+          c.insert(S[i]);
+      }
+      return (S.size()-c.size());
+}
