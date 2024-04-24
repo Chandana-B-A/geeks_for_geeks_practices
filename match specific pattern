@@ -1,0 +1,56 @@
+class GfG
+{
+public static ArrayList<String> findMatchedWords(ArrayList<String> dict, String pattern)
+    {
+        // add code here.
+        
+        int dictSize = dict.size();
+        int pattSize = pattern.length();
+        
+        ArrayList<String> finalList = new ArrayList<>();
+        
+        Map<Character,Integer> pMap = new LinkedHashMap<>();
+        for(int i = 0 ;i < pattSize;i++) {
+            char currentChar = pattern.charAt(i);
+            if(pMap.containsKey(currentChar)) {
+                pMap.put(currentChar, pMap.get(currentChar) + 1);
+            }
+            else {
+                pMap.put(currentChar,1);
+            }
+        }
+        
+        
+        for(int i = 0 ; i<dictSize; i++) {
+            
+            Map<Character,Integer> sMap = new LinkedHashMap<>();
+            
+            String current = dict.get(i);
+            
+            for(int j = 0 ;j < current.length();j++) {
+                
+                char currentChar = current.charAt(j);
+                if(sMap.containsKey(currentChar)) {
+                    sMap.put(currentChar, sMap.get(currentChar) + 1);
+                }
+                else {
+                    sMap.put(currentChar,1);
+                }
+            }
+            
+            if(pMap.size() == sMap.size()) {
+                
+                String pMapValues = pMap.values().toString();
+                String sMapValues = sMap.values().toString();
+                
+                if(sMapValues.equals(pMapValues)) {
+                    finalList.add(current);
+                }
+                    
+            }
+            
+            
+        }
+        return finalList;
+    }
+}
