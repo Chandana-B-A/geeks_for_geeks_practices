@@ -1,0 +1,38 @@
+class Solution
+{
+    //Function to perform case-specific sorting of strings.
+    public static String caseSort(String str)
+    {
+         int n=str.length();
+        StringBuilder up = new StringBuilder();
+        StringBuilder lo = new StringBuilder();
+
+        for (int i = 0; i < n; i++) {
+            if (Character.isUpperCase(str.charAt(i))) {
+                up.append(str.charAt(i));
+            } else {
+                lo.append(str.charAt(i));
+            }
+        }
+
+        char[] upArray = up.toString().toCharArray();
+        char[] loArray = lo.toString().toCharArray();
+
+        Arrays.sort(upArray);
+        Arrays.sort(loArray);
+
+        int j = 0, k = 0;
+        StringBuilder out = new StringBuilder();
+
+        for (int i = 0; i < n; i++) {
+            if (Character.isUpperCase(str.charAt(i))) {
+                out.append(upArray[j++]);
+            } else {
+                out.append(loArray[k++]);
+            }
+        }
+
+        return out.toString();
+    
+    }
+}
