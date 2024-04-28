@@ -1,0 +1,11 @@
+class Solution {
+    static int solve(int bt[] ) {
+    // code here 12347     1 3 6 10  17       wt  0 1 3 6  10 
+Arrays.sort(bt);
+int w=0,s=0;
+for(int a:bt){
+    s+=a;
+    w+=s-a;}
+return w/bt.length;
+  }
+}
