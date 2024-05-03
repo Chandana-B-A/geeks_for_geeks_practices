@@ -1,0 +1,45 @@
+class Solution {
+    public static ArrayList<Node> findAnagrams(Node head, String s) {
+        // make simple string character frequency array for comparision of anagram
+        int m[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            m[c-'a']++;
+        }
+        
+      ArrayList<Node>result=new ArrayList<>();
+      int temp[]=new int[26];
+      Node cur=head;
+      Node prev=head;
+      Node next=null;
+      int len=0;
+      while(cur!=null){
+          next=cur.next;
+          len++;
+          temp[cur.data-'a']++;
+          
+          if(len>s.length()){
+          temp[prev.data-'a']--;
+          prev=prev.next;
+          }
+          
+          if(isSame(temp,m)){
+              result.add(prev);
+              cur.next=null;
+              prev=next;
+              Arrays.fill(temp,0);
+              len=0;
+          }
+          cur=next;
+          
+      }
+      return result;
+    }
+    
+    static boolean isSame(int m[],int temp[]){
+        for(int i=0;i<m.length;i++){
+            if(m[i]!=temp[i])return false;
+        }
+        return true;
+    }
+}
