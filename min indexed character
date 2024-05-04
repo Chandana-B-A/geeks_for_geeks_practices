@@ -1,0 +1,14 @@
+class Solution
+{
+    //Function to find the minimum indexed character.
+    public static int minIndexChar(String str, String patt)
+    {
+        // Your code here
+        for(int i=0;i<str.length();i++){
+            char idx=str.charAt(i);
+            if(patt.indexOf(idx)!=-1)
+                return i;
+        }
+        return -1;
+    }
+}
