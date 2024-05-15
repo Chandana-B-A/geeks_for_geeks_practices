@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     public int numberOfSpecialChars(String word) {
         Set<Character> small=new HashSet<>();
         Set<Character> cap=new HashSet<>();
