@@ -6,7 +6,7 @@ class Solution {
         for(char c:word.toCharArray()){
             if(c>='a' && c<='z')
                 small.add(c);
-            else
+            else 
                 cap.add(c);
         }
         int count=0;
