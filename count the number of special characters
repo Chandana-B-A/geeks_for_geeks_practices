@@ -8,7 +8,7 @@ class Solution {
                 small.add(c);
             else 
                 cap.add(c);
-        }
+        } 
         int count=0;
         for(char c:small){
             if(cap.contains(Character.toUpperCase(c)))
