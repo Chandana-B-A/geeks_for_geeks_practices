@@ -1,4 +1,4 @@
-class Solution{
+class Solution{ 
     public int[][] computeBeforeMatrix(int N, int M,int[][] after ){
         // Code here
         for(int j=M-1; j>0; j--)
