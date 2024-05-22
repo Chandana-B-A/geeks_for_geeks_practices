@@ -4,7 +4,7 @@ class Solution
     int count = 0;
     Map<Integer, Integer> map = new HashMap<>();
     map.put(0, 1);
-    int diff = 0;
+    int diff = 0; 
     for (int i = 0; i < S.length(); i++) {
         char c = S.charAt(i);
         diff += Character.isUpperCase(c) ? 1 : -1;
