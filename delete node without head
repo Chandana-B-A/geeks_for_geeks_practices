@@ -9,3 +9,4 @@ class Solution
          del_node.next=temp1;
     } 
 }
+ 
