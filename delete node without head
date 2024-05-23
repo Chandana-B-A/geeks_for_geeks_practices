@@ -8,5 +8,5 @@ class Solution
          del_node.data=temp.data;
          del_node.next=temp1;
     } 
-}
+} 
  
