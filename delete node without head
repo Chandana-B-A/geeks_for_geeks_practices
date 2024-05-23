@@ -7,5 +7,5 @@ class Solution
          Node temp1=del_node.next.next;
          del_node.data=temp.data;
          del_node.next=temp1;
-    }
+    } 
 }
