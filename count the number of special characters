@@ -9,7 +9,7 @@ class Solution {
             else 
                 cap.add(c);
         } 
-        int count=0; 
+        int count=0;  
         for(char c:small){ 
             if(cap.contains(Character.toUpperCase(c)))
                 count++;
