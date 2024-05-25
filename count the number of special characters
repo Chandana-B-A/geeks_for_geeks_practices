@@ -4,7 +4,7 @@ class Solution {
         Set<Character> cap=new HashSet<>();
 
         for(char c:word.toCharArray()){
-            if(c>='a' && c<='z') 
+            if(c>='a' && c<='z')  
                 small.add(c);
             else 
                 cap.add(c);
