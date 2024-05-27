@@ -1,0 +1,9 @@
+class Solution {
+    int sumOfDependencies(ArrayList<ArrayList<Integer>> adj, int V) {
+        // code here
+        int sum=0;
+        for(ArrayList<Integer> aj:adj)
+            sum+=aj.size();
+        return sum;
+    }
+};
