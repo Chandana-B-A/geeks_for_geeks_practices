@@ -1,4 +1,4 @@
-class Solution {
+class Solution { 
     void clonestack(Stack<Integer> st, Stack<Integer> cloned) {
         // code here
         if(st.isEmpty()) return;
