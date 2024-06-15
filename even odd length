@@ -1,0 +1,12 @@
+class Solution {
+    public int isLengthEvenOrOdd(Node head) {
+        // code here
+        int len=0;
+        while(head!=null){
+            len++;
+            head=head.next;
+        }
+        
+        return len%2;
+    }
+}
