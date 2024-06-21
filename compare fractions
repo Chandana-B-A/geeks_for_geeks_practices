@@ -1,0 +1,13 @@
+class Solution {
+    String compareFrac(String str) {
+        // Code here
+        int index = str.indexOf(',');
+        String fraction1 = str.substring(0,index);
+        String fraction2 = str.substring(index+2,str.length());
+        index = fraction1.indexOf('/');
+        double val1 = Double.valueOf(fraction1.substring(0,index))/Double.valueOf(fraction1.substring(index+1,fraction1.length()));
+        index = fraction2.indexOf('/');
+        double val2 = Double.valueOf(fraction2.substring(0,index))/Double.valueOf(fraction2.substring(index+1,fraction2.length()));
+        return val1>val2?fraction1:val1<val2?fraction2:"equal";
+    }
+}
