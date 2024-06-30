@@ -1,0 +1,42 @@
+class Tree
+{
+    // Return a list containing the Preorder traversal of the given tree
+    ArrayList<Integer> preOrder(Node root)
+    {
+        ArrayList<Integer> ans = new ArrayList<>();
+        Node parent = null;
+        while(root!=null){
+            if(root.data>0){                        // means for first time visit.
+                ans.add(root.data);
+                root.data = -root.data;             // marking first time visit.
+                Node copyLeft = root.left;          
+                root.left = parent;                 // making left pointer to root node.
+                
+                if(copyLeft != null){
+                    parent = root;
+                    root = copyLeft;
+                }
+                else if(root.right!=null){
+                    Node copyRight = root.right;
+                    root.right = parent;            // update right to root and go to right.
+                    parent = root;
+                    root = copyRight;
+                }
+                else    root = parent;              // if both are null then go to parent.
+            }
+            
+            else if(root.left != root.right){       // means its right part is remained to visit.
+                if(root.right!=null){
+                    Node copyRight = root.right;
+                    root.right = root.left;            // updating current's left and right both to its parent.
+                    parent = root;
+                    root = copyRight;
+                }
+                else    root = root.left;               // goining to its parent.
+            }
+            else root = root.left;                      // got to its parent as both sides are visited already.
+        }
+        
+        return ans;
+    }
+}
