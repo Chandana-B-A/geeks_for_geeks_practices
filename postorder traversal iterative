@@ -1,0 +1,43 @@
+class Tree {
+    class Pair{
+        Node node;
+        int level;
+        
+        Pair(Node node,int level){
+            this.node=node;
+            this.level=level;
+        }
+    }
+    ArrayList<Integer> postOrder(Node root) {
+        // code here
+               Stack<Pair>st=new Stack<>();
+        ArrayList<Integer>ar=new ArrayList<>();
+        
+        st.push(new Pair(root,0));
+        
+        while(st.size()>0){
+            Pair top=st.peek();
+            
+            if(top.level==0){
+             
+                if(top.node.left!=null){
+                    
+                    st.push(new Pair(top.node.left,0));
+                }
+                top.level++;
+            }else if(top.level==1){
+                  
+                if(top.node.right!=null){
+                   
+                    st.push(new Pair(top.node.right,0));
+                }
+                top.level++; 
+            }else{
+                 ar.add(top.node.data);
+                st.pop();
+            }
+        }
+        return ar;
+    }
+
+}
