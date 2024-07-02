@@ -1,0 +1,22 @@
+class GfG
+{
+    int sum=0;
+    public int SumofLeafNodes(Node root)
+    {
+        // your code here
+        ArrayList<Integer> al = new ArrayList<>();
+        solve(root,al);
+        int sum=0;
+        for(Integer a:al)
+            sum+=a;
+        return sum;
+    }
+    public void solve(Node node, ArrayList<Integer> al){
+        if(node==null)  return;
+        solve(node.left,al);
+        solve(node.right,al);
+        if(node.left == null && node.right == null)
+            al.add(node.data);
+            
+    }
+}
