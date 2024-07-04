@@ -3,7 +3,7 @@ class Solution
     //Function to perform case-specific sorting of strings.
     public static String caseSort(String str)
     {
-         int n=str.length(); 
+         int n=str.length();  
         StringBuilder up = new StringBuilder();
         StringBuilder lo = new StringBuilder();
 
