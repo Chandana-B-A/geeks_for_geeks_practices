@@ -9,7 +9,7 @@ class Solution{
         int lst=solve(root.left);
         int rst=solve(root.right);
         int x=root.data;
-        root.data=lst+rst;
+        root.data=lst+rst; 
         return lst+rst+x;
     }
 }
